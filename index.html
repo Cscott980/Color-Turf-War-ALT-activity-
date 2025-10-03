@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Color Turf War</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="left-controls">
+      <button id="startBtn" class="btn">▶ Start</button>
+      <button id="stopBtn" class="btn" disabled>■ Stop</button>
+      <input id="timeInput" class="btn" type="number" min="1" value="3" style="width:64px" title="Minutes" />
+      <span id="timer" class="timer">03:00</span>
+    </div>
+    <div class="right-controls">
+      <button id="undoBtn" class="btn">↶ Undo</button>
+      <button id="resetBtn" class="btn">Reset Board</button>
+      <button id="infoBtn" class="btn">ℹ️ Info</button>
+      <button id="themeToggle" class="btn">🌙 Dark</button>
+    </div>
+  </div>
+
+  <h1>Color Turf War</h1>
+
+  <!-- Teacher / Score area -->
+  <div class="teacher-controls">
+    <span class="badge">Scores & leader crown below</span>
+  </div>
+
+  <!-- Palette (visual only now; buttons are inert) -->
+  <div class="palette" aria-label="Scoreboard palette"></div>
+
+  <!-- Game grid -->
+  <div class="grid disabled" aria-label="Game board"></div>
+
+  <!-- RPS Overlay -->
+  <div class="rps-overlay" hidden>
+    <div class="rps-stage">
+      <div class="hand" id="handL">✊</div>
+      <div class="vs">VS</div>
+      <div class="hand" id="handR">✊</div>
+      <div class="result" id="rpsResult">Rock… Paper… Scissors!</div>
+    </div>
+  </div>
+
+  <!-- End Banner -->
+  <div class="end-banner" hidden>
+    <div class="end-card">
+      <h2 id="winnerText">Winner:</h2>
+      <button id="playAgain" class="btn" style="margin-top:10px;">Play Again</button>
+    </div>
+  </div>
+
+  <!-- Info -->
+  <div class="info-overlay" hidden>
+    <div class="info-card">
+      <button id="closeInfo" class="close-btn">✖</button>
+      <h3>How to play</h3>
+      <p>Click a tile. A popup will ask you to choose a color for that move. If the tile is owned, you’ll play Rock-Paper-Scissors. On a win, you’ll choose a color and capture the tile.</p>
+    </div>
+  </div>
+
+  <!-- Confetti layer -->
+  <div class="confetti-root"></div>
+
+  <!-- SFX -->
+  <audio id="sfx-win"  src="data:audio/mp3;base64,//uQZAAAAAAAAAAAAAAAAAAAA"></audio>
+  <audio id="sfx-lose" src="data:audio/mp3;base64,//uQZAAAAAAAAAAAAAAAAAAAA"></audio>
+  <audio id="sfx-ding" src="data:audio/mp3;base64,//uQZAAAAAAAAAAAAAAAAAAAA"></audio>
+  <audio id="sfx-end"  src="data:audio/mp3;base64,//uQZAAAAAAAAAAAAAAAAAAAA"></audio>
+
+  <div class="footer"><p>© Color Turf War</p></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
